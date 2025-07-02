@@ -8,9 +8,12 @@ const bcrypt = require("bcryptjs");
 const PORT = process.env.PORT || 8080;
 const MONGO = process.env.MONGOURL;
 
-app.use(cors());
-
 app.use(express.json());
+app.use(cors{
+  origin: "*",
+});
+
+
 
 mongoose.connect(MONGO, {
   useNewUrlParser: true,
